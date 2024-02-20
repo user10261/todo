@@ -26,4 +26,5 @@ urlpatterns = [
     path('progres/', in_progress_view, name='progres'),
     path('complated/', completed_view, name='completed'),
     path('deleted/', deleted_view, name='deleted'),
+    path('search/', search_view, name='search'),
 ]
