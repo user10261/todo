@@ -48,6 +48,12 @@ def completed_view(request):
     progres = Todo.objects.filter(status=1).order_by('-id')
     return render(request, 'finished.html', {'progres': progres})
 
+def search_view(request):
+    search = request.POST.get('search')
+    todos = Todo.objects.filter(title__icontains=search).order_by('title')
+    context = {'todos': todos}
+    return render(request, 'search.html', context)
+
 
 
 
